@@ -24,6 +24,7 @@ public class tankControls : MonoBehaviour
         if (Input.GetButton("Vertical"))
         {
             tf.Translate(Input.GetAxis("Vertical") * mSpeed, 0.0f, 0.0f);
+            mSpeed = Mathf.Clamp(mSpeed, 0.0f, 1.0f);
         }
        
     }
