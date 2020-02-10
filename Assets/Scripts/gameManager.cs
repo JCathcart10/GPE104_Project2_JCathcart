@@ -7,8 +7,11 @@ public class gameManager : MonoBehaviour
     public static gameManager instance;
     public GameObject playerPrefab;
     public GameObject Player;
+    public GameObject astroidPrefab;
     public int score = 0;
     public int lives = 3;
+    public bool isPaused = false;
+    public List<GameObject> enemyList = new List<GameObject>();
 
     void Awake()
     {
@@ -22,6 +25,15 @@ public class gameManager : MonoBehaviour
             Destroy(this.gameObject);
             Debug.Log("Warning: A second game manager was detected and destroyed.");
         }
+    }
+
+    private void Start()
+    {
+        gameManager.instance.enemyList.Add(this.gameObject);
+    }
+    private void OnDestroy()
+    {
+        gameManager.instance.enemyList.Remove(this.gameObject);
     }
 
     private void Update()

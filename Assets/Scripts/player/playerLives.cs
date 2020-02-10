@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class playerLives : MonoBehaviour
 {
-    
-
     private void OnDestroy()
     {
        gameManager.instance.lives -= 1;

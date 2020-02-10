@@ -357,8 +357,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 7fd10a87cea49c6478af00a0a6ef1d2d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
+  m_Sprite: {fileID: 21300000, guid: d9b31ebd60af68c469212c1a9f513e74, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -376,8 +376,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247676174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 0.079, z: 0}
-  m_LocalScale: {x: 1.9564494, y: 1.6701739, z: 1}
+  m_LocalPosition: {x: 0.058, y: 0.065, z: 0}
+  m_LocalScale: {x: 0.69069636, y: 0.3180289, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -399,7 +399,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12, y: 6}
+    oldSize: {x: 40.96, y: 40.96}
     newSize: {x: 12, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -451,8 +451,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 202315329}
   Player: {fileID: 202315329}
+  astroidPrefab: {fileID: 6732635034727130459, guid: e3bf4596f6c224046b446a0b82754ccd,
+    type: 3}
   score: 0
   lives: 3
+  isPaused: 0
+  enemyList: []
 --- !u!4 &1276171895
 Transform:
   m_ObjectHideFlags: 0
@@ -465,82 +469,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &2382290137391435141
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2382290138660420724, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_Name
-      value: beachball (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420724, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.28119794
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2382290138660420720, guid: 368a014982ff4d84584428d11729f49d,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 368a014982ff4d84584428d11729f49d, type: 3}
 --- !u!1001 &6732635035085330802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -551,12 +481,12 @@ PrefabInstance:
     - target: {fileID: 6732635034727130459, guid: e3bf4596f6c224046b446a0b82754ccd,
         type: 3}
       propertyPath: m_Name
-      value: beachball
+      value: astroid
       objectReference: {fileID: 0}
     - target: {fileID: 6732635034727130459, guid: e3bf4596f6c224046b446a0b82754ccd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6732635034727130463, guid: e3bf4596f6c224046b446a0b82754ccd,
         type: 3}
