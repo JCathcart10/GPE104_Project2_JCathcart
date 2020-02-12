@@ -7,7 +7,8 @@ public class tankControls : MonoBehaviour
     private Transform tf; // Create a variable for our transform component
     public float tSpeed; // Create a variable for the degrees we rotate in one frame draw
     public float mSpeed; // Create a variable for the lateral speed
-    // Use this for initialization
+    public GameObject bulletPrefab;
+    public Transform firePoint;
     void Start()
     {
         tf = GetComponent<Transform>(); // Load our transform component into our variable
@@ -26,6 +27,17 @@ public class tankControls : MonoBehaviour
             tf.Translate(Input.GetAxis("Vertical") * mSpeed, 0.0f, 0.0f);
             mSpeed = Mathf.Clamp(mSpeed, 0.0f, 1.0f);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+
        
+       
+    }
+    void Shoot()
+    {
+        Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
     }
 }

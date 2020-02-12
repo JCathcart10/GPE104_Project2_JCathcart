@@ -12,6 +12,7 @@ public class gameManager : MonoBehaviour
     public int lives = 3;
     public bool isPaused = false;
     public List<GameObject> enemyList = new List<GameObject>();
+    public ArrayList enemyArray[];
 
     void Awake()
     {
