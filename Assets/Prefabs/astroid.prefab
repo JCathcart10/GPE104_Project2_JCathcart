@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 6732635034727130463}
   - component: {fileID: 6732635034727130462}
   - component: {fileID: 6732635034727130457}
-  - component: {fileID: 6732635034727130456}
-  - component: {fileID: 6732635034727130460}
   m_Layer: 0
-  m_Name: beachball_Clockwise
+  m_Name: astroid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,29 +97,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
---- !u!114 &6732635034727130456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732635034727130459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f396fdeb04a2d024eaf5188f42da08c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tSpeed: 5
-  mSpeed: 0.3
---- !u!114 &6732635034727130460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6732635034727130459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd5b4188c3eeb974a93d11f5eec35cda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

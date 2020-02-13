@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyMovement : MonoBehaviour
+public class astroidScript : MonoBehaviour
 {
     private Transform tf; // Create a variable for our transform component
     public float tSpeed; // Create a variable for the degrees we rotate in one frame draw
-    public float mSpeed; // Create a variable for the lateral speed
+    public float mSpeed = 5f; // Create a variable for the lateral speed
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class enemyMovement : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D otherObject)
     {
-        if (otherObject.gameObject == gameManager.instance.Player)
+        if (otherObject.gameObject == gameManager.instance.player)
         {
             Destroy(otherObject.gameObject);
             Destroy(this.gameObject);          
@@ -23,12 +23,12 @@ public class enemyMovement : MonoBehaviour
         
     }
 
-    private void OnDestroy()
+   private void OnDestroy()
     {
         gameManager.instance.enemyList.Remove(this.gameObject);
     }
     void Update()
     {
-       
+        tf.position += tf.up * mSpeed * Time.deltaTime;
     }
 }

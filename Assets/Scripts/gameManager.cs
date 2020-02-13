@@ -6,20 +6,20 @@ public class gameManager : MonoBehaviour
 {
     public static gameManager instance;
     public GameObject playerPrefab;
-    public GameObject Player;
+    public GameObject player;
     public GameObject astroidPrefab;
     public int score = 0;
     public int lives = 3;
     public bool isPaused = false;
     public List<GameObject> enemyList = new List<GameObject>();
-    public ArrayList enemyArray[];
+    public int[] enemyArray;
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(this.gameObject);
         }
         else
         {

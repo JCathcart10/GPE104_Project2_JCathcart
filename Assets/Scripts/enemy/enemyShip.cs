@@ -19,7 +19,7 @@ public class enemyShip : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D otherObject)
     {
-        if (otherObject.gameObject == gameManager.instance.Player)
+        if (otherObject.gameObject == gameManager.instance.player)
         {
             Destroy(otherObject.gameObject);
             Destroy(this.gameObject);
