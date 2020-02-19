@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,8 +25,9 @@ public class tankControls : MonoBehaviour
 
         if (Input.GetButton("Vertical"))
         {
-            tf.Translate(Input.GetAxis("Vertical") * mSpeed, 0.0f, 0.0f);
             mSpeed = Mathf.Clamp(mSpeed, 0.0f, 1.0f);
+            tf.Translate(Input.GetAxis("Vertical") * mSpeed, 0.0f, 0.0f);
+           
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -35,6 +37,24 @@ public class tankControls : MonoBehaviour
 
        
     }
+
+    public void die()
+    {
+
+/*        gameManager.instance.lives -= 1;//subtracts 1 life
+
+        if (gameManager.instance.lives > 0)// checks if player has lives left
+        {
+            gameManager.instance.Respawn();//respawns player
+        }
+        else// if no lives are lete
+        {
+            Debug.Log("Game Over");//Game Over message
+        }
+        // Subtract lives here
+        Destroy(this.gameObject);*/
+    }
+
     void Shoot()
     {
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

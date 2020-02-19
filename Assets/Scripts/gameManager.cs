@@ -16,26 +16,28 @@ public class gameManager : MonoBehaviour
 
     void Awake()
     {
-        if (instance == null)
+        if (instance == null)// if the gamemanager is not initiated
         {
-            instance = this;
+            instance = this;// initiates this as the gamemanager
             //DontDestroyOnLoad(this.gameObject);
         }
-        else
+        else// if there is already a game manager already initiated
         {
-            Destroy(this.gameObject);
-            Debug.Log("Warning: A second game manager was detected and destroyed.");
+            Destroy(this.gameObject);// destroys this gamemanager
+            Debug.Log("Warning: A second game manager was detected and destroyed.");// sends an error to the console
         }
     }
 
     private void Start()
     {
-        gameManager.instance.enemyList.Add(this.gameObject);
+        //gameManager.instance.enemyList.Add(this.gameObject);
+        Debug.Log(enemyList.Count + " enemeies active");
     }
-    private void OnDestroy()
+   /* public void OnDestroy()
     {
-        gameManager.instance.enemyList.Remove(this.gameObject);
-    }
+        //gameManager.instance.enemyList.Remove(this.gameObject);
+        Debug.Log(enemyList.Count + " enemeies active");
+    }*/
 
     private void Update()
     {
@@ -44,6 +46,9 @@ public class gameManager : MonoBehaviour
             Application.Quit();
         }
     }
+
+
+
     public void Respawn()
     {
         Instantiate(playerPrefab);

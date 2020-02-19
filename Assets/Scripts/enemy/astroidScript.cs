@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,19 +14,23 @@ public class astroidScript : MonoBehaviour
         tf = GetComponent<Transform>(); // Load our transform component into our variable
         gameManager.instance.enemyList.Add(this.gameObject);
     }
+
+  
     private void OnCollisionEnter2D(Collision2D otherObject)
     {
         if (otherObject.gameObject == gameManager.instance.player)
         {
-            Destroy(otherObject.gameObject);
-            Destroy(this.gameObject);          
+            otherObject.gameObject.GetComponent<playerLives>().die();
+            die();
         }
         
     }
 
-   private void OnDestroy()
+    public void die()
     {
         gameManager.instance.enemyList.Remove(this.gameObject);
+        //Debug.Log(enemyList.Count + " enemeies active");
+        Destroy(this.gameObject);
     }
     void Update()
     {

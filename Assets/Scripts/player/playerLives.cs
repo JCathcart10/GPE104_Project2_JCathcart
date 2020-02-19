@@ -4,24 +4,20 @@ using UnityEngine;
 
 public class playerLives : MonoBehaviour
 {
-    //private int livesLeft;
-    void Start()
+    public void die()//when the player dies
     {
-       // livesLeft = gameManager.instance.lives;
-    }
+        gameManager.instance.lives -= 1;//subtracts 1 life
 
-    private void OnDestroy()
-    {
-        gameManager.instance.lives -= 1;
-
-        if (gameManager.instance.lives > 0)
+        if (gameManager.instance.lives > 0)// checks if player has lives left
         {
-            gameManager.instance.Respawn();
+            gameManager.instance.Respawn();//respawns player
         }
-        else
+        else// if no lives are left
         {
-            Debug.Log("Game Over");
+            
+            Debug.Log("Game Over");//Game Over message
         }
-    }
 
+        Destroy(this.gameObject);
+    }
 }

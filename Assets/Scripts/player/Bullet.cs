@@ -23,11 +23,5 @@ public class Bullet : MonoBehaviour
        
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject == playArea.gameObject)
-        {
-            Destroy(this);
-        }
-    }
+   
 }
